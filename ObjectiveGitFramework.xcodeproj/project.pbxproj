@@ -25,7 +25,7 @@
 				6A3C609117D5963700382DFF /* libssh2-iOS */,
 			);
 			dependencies = (
-				6A3C609D17D5964E00382DFF /* PBXTargetDependency */,
+				9AC90C94238482E400A6D50D /* PBXTargetDependency */,
 			);
 			name = "libssh2-iOS";
 			productName = "libssh2-iOS";
@@ -389,13 +389,6 @@
 			remoteGlobalIDString = D0A330ED16027F1E00A616FA;
 			remoteInfo = libgit2;
 		};
-		6A3C609C17D5964E00382DFF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6A28265217C69CB400C6A948;
-			remoteInfo = "OpenSSL-iOS";
-		};
 		6A3C609E17D5965700382DFF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -409,6 +402,13 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
 			remoteInfo = ObjectiveGit;
+		};
+		9AC90C93238482E400A6D50D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A28265217C69CB400C6A948;
+			remoteInfo = "OpenSSL-iOS";
 		};
 		D019779619F8335100F523DA /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -1383,7 +1383,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = script/update_libssl_ios;
+			shellScript = "script/update_libssl_ios\n";
 		};
 		6A3C609117D5963700382DFF /* libssh2-iOS */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1397,7 +1397,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = script/update_libssh2_ios;
+			shellScript = "script/update_libssh2_ios\n";
 		};
 		D0A330F116027F2300A616FA /* libgit2 */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1411,7 +1411,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = script/update_libgit2;
+			shellScript = "script/update_libgit2\n";
 		};
 		D0A330F616027F3B00A616FA /* libgit2-iOS */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1425,7 +1425,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = script/update_libgit2_ios;
+			shellScript = "script/update_libgit2_ios\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1653,11 +1653,6 @@
 			target = D0A330ED16027F1E00A616FA /* libgit2 */;
 			targetProxy = 3D6123BD1A6432F6008F831A /* PBXContainerItemProxy */;
 		};
-		6A3C609D17D5964E00382DFF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6A28265217C69CB400C6A948 /* OpenSSL-iOS */;
-			targetProxy = 6A3C609C17D5964E00382DFF /* PBXContainerItemProxy */;
-		};
 		6A3C609F17D5965700382DFF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 6A3C609017D5963700382DFF /* libssh2-iOS */;
@@ -1667,6 +1662,11 @@
 			isa = PBXTargetDependency;
 			target = 8DC2EF4F0486A6940098B216 /* ObjectiveGit-Mac */;
 			targetProxy = 88F05A9F16011F9000B7AD1D /* PBXContainerItemProxy */;
+		};
+		9AC90C94238482E400A6D50D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A28265217C69CB400C6A948 /* OpenSSL-iOS */;
+			targetProxy = 9AC90C93238482E400A6D50D /* PBXContainerItemProxy */;
 		};
 		D019779719F8335100F523DA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1783,6 +1783,7 @@
 				);
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"$(inherited)",
 					"-Wno-incomplete-umbrella",
@@ -1821,6 +1822,7 @@
 				);
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"$(inherited)",
 					"-Wno-incomplete-umbrella",
@@ -1833,6 +1835,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "OpenSSL-iOS";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1841,6 +1844,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "OpenSSL-iOS";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1849,6 +1853,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "OpenSSL-iOS";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Profile;
 		};
@@ -1857,6 +1862,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "libssh2-iOS";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -1865,6 +1871,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "libssh2-iOS";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};
@@ -1873,6 +1880,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "libssh2-iOS";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Profile;
 		};
@@ -1954,6 +1962,7 @@
 				);
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"$(inherited)",
 					"-Wno-incomplete-umbrella",
@@ -2030,7 +2039,10 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libgit2.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ObjectiveGit;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/External/libgit2/include";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2049,6 +2061,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Test;
 		};
@@ -2057,6 +2070,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "OpenSSL-iOS";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Test;
 		};
@@ -2065,6 +2079,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "libssh2-iOS";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Test;
 		};
@@ -2087,7 +2102,10 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libgit2.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ObjectiveGit;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/External/libgit2/include";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2112,7 +2130,10 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libgit2.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ObjectiveGit;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/External/libgit2/include";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2137,7 +2158,10 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.libgit2.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = ObjectiveGit;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				USER_HEADER_SEARCH_PATHS = "$(SRCROOT)/External/libgit2/include";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
+				"VALID_ARCHS[sdk=iphonesimulator*]" = x86_64;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -2174,6 +2198,7 @@
 				);
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = x86_64;
 				WARNING_CFLAGS = (
 					"$(inherited)",
 					"-Wno-incomplete-umbrella",
@@ -2244,6 +2269,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Profile;
 		};
@@ -2268,6 +2294,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2276,6 +2303,7 @@
 			baseConfigurationReference = D0D81865174421EB00995A2E /* iOS-StaticLibrary.xcconfig */;
 			buildSettings = {
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};

@@ -51,7 +51,7 @@ function build_libgit2 ()
         "${SYS_ROOT}" \
         -DCMAKE_OSX_ARCHITECTURES:STRING="${ARCH}" \
         "${ROOT_PATH}/External/libgit2" >> "${LOG}" 2>&1
-    cmake --build . --target install >> "${LOG}" 2>&1
+    cmake --build . --target install -- -j$(sysctl hw.ncpu | awk '{print $2}') >> "${LOG}" 2>&1
     popd > /dev/null
 
     # push the built library into the list
